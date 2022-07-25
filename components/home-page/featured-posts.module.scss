@@ -1,13 +1,39 @@
-.latest {
-  width: 90%;
-  max-width: 80rem;
-  margin: var(--size-8) auto;
-}
+@use "../../styles/pallet.module.scss";
 
-.latest h2 {
-  font-size: var(--size-8);
-  color: var(--color-grey-800);
-  text-align: center;
+.features {
+  width: 100vw;
+  padding: var(--size-16);
+  @include pallet.grid-it(1fr, repeat(2, max-content), 6rem);
+
+  align-items: center;
+  justify-items: center;
+
+  &:nth-child(odd) {
+    background: var(--color-light-neutral-6);
+  }
+  &:nth-child(even) {
+    background: var(--color-light-neutral-1);
+  }
+
+  > h2 {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    font-size: var(--size-16);
+    color: var(--color-light-neutral-6);
+    text-align: center;
+  }
+
+  .latest {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    align-self: start;
+    max-width: 80rem;
+    @include pallet.grid-it(
+      repeat(auto-fit, minmax(20rem, 1fr)),
+      repeat(auto-fit, max-content),
+      6rem
+    );
+  }
 }
 
 @media (min-width: 768px) {

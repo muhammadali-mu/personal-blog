@@ -1,40 +1,155 @@
-.header {
-  width: 100%;
-  height: 9rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10%;
+@use "../../styles/pallet.module.scss";
 
-  background: rgba(61, 61, 61, 0.46);
-  border-radius: 1px;
+.header {
+  width: 100vw;
+  height: 9rem;
+  &::-webkit-scrollbar {
+    height: 7rem;
+  }
+
+  @include pallet.grid-it(
+    max-content minmax(20rem, 1fr) max-content,
+    max-content,
+    1rem
+  );
+  position: -webkit-sticky; /* Safari & IE */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  justify-content: center;
+  align-content: center;
+
+  padding: 0 10%;
+  background: rgba(53, 53, 77, 0.699);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(7.6px);
   -webkit-backdrop-filter: blur(7.6px);
-  border-bottom: 1px solid rgba(61, 61, 61, 1);
-}
+  border-bottom: 1px solid rgba(61, 61, 61, 0.2);
 
-.header ul {
-  list-style: none;
-  display: flex;
-  align-items: baseline;
-  margin: 0;
-  padding: 0;
-}
+  .logo {
+    @include pallet.flex-it(row, center, space-around, 0.5em);
+  }
 
-.header li {
-  margin: 0 var(--size-7);
-}
+  .navbar {
+    @include pallet.flex-it(row, center, space-around, 0.5em);
 
-.header a {
-  color: var(--color-grey-100);
-  font-size: var(--size-6);
-}
+    padding: 1rem;
+    > ul {
+      grid-column: 2/3;
+      @include pallet.flex-it(row, center, space-around, 2.5rem);
+      margin: 0;
+      padding: 0;
+      list-style: none;
 
-.header a:hover,
-.header a:active,
-.header a.active {
-  color: var(--color-grey-200);
+      > li {
+        width: max-content;
+        margin: 0;
+
+        > a {
+          @include pallet.flex-it(row, center, space-around, 0.5rem);
+          font-family: inherit, sans-serif;
+          color: var(--color-light-neutral-7);
+          font-size: var(--size-7);
+          width: max-content;
+          padding: 0.5rem 0.7rem;
+
+          background: rgba(20, 35, 48, 0.671);
+          border-radius: 10px;
+          box-shadow: 0px 20px 29px -7px rgba(0, 0, 0, 0.13);
+          backdrop-filter: blur(10.2px);
+          -webkit-backdrop-filter: blur(10.2px);
+          border: 1px solid rgb(19, 28, 49);
+
+          &::before {
+            content: "";
+            display: block;
+            width: 2rem;
+            aspect-ratio: 1/1;
+            background-color: var(--color-light-neutral-7);
+            mask-position: center center;
+            mask-repeat: no-repeat;
+            mask-size: 2rem;
+          }
+
+          &:hover,
+          :active {
+            background: rgba(20, 71, 109, 0.603);
+            border-radius: 10px;
+            box-shadow: inset 0px 20px 29px -7px rgba(0, 0, 0, 0.322);
+            backdrop-filter: blur(10.2px);
+            -webkit-backdrop-filter: blur(10.2px);
+            border: 1px solid rgba(40, 54, 66, 0.534);
+          }
+        }
+        .roadmap {
+          &::before {
+            mask: url(../../public/images/icons/map-outline.svg);
+          }
+        }
+        .contact {
+          &::before {
+            mask: url(../../public/images/icons/mail-unread-outline.svg);
+          }
+        }
+        .htm {
+          &::before {
+            mask: url(../../public/images/icons/logo-html5.svg);
+          }
+        }
+        .css {
+          &::before {
+            mask: url(../../public/images/icons/logo-css3.svg);
+          }
+          &::after {
+            content: "";
+            display: block;
+            width: 2rem;
+            aspect-ratio: 1/1;
+            mask: url(../../public/images/icons/logo-sass.svg);
+            background-color: var(--color-light-neutral-3);
+            mask-position: center center;
+            mask-repeat: no-repeat;
+            mask-size: 2rem;
+          }
+        }
+        .img {
+          &::before {
+            mask: url(../../public/images/icons/image-outline.svg);
+          }
+        }
+        .text {
+          &::before {
+            mask: url(../../public/images/icons/newspaper-outline.svg);
+          }
+        }
+        .youtube {
+          &::before {
+            mask: url(../../public/images/icons/logo-youtube.svg);
+          }
+        }
+      }
+    }
+  }
+  .github {
+    @include pallet.flex-it(row, center, space-around, 0.5rem);
+    font-family: inherit, sans-serif;
+    color: var(--color-grey-50);
+    font-size: var(--size-7);
+    width: max-content;
+    grid-column: 3/-1;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 8rem;
+      aspect-ratio: 1/1;
+      mask: url(../../public/images/icons/logo-github.svg);
+      background-color: var(--color-grey-800);
+      mask-position: center center;
+      mask-repeat: no-repeat;
+      mask-size: 8rem;
+    }
+  }
 }
 
 @media (min-width: 768px) {

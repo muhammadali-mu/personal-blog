@@ -3,9 +3,11 @@ import styles from "./featured-posts.module.scss";
 
 function FeaturedPosts(props) {
   return (
-    <section className={styles.latest}>
-      <h2>Featured Posts</h2>
-      <PostGrid posts={props.posts} />
+    <section className={styles.features}>
+      <h2>Featured Posts</h2> //in ghesmato dynamic konam
+      <div className={styles.latest}>
+        <PostGrid posts={props.posts} />
+      </div>
     </section>
   );
 }

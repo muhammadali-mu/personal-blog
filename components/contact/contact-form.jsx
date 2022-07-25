@@ -26,12 +26,14 @@ function ContactForm() {
 
   return (
     <section className={styles.contact}>
-      <h1>How can I help you ?</h1>
+      <h2>Feel free to join me </h2>
       <form className={styles.form} onSubmit={sendMessageHandler}>
         <div className={styles.controls}>
           <div className={styles.control}>
             <label htmlFor="email">Your Email</label>
             <input
+              className={styles.input}
+              placeholder="Enter Name"
               type="email"
               id="email"
               required
@@ -42,6 +44,8 @@ function ContactForm() {
           <div className={styles.control}>
             <label htmlFor="name">Your Name</label>
             <input
+              className={styles.input}
+              placeholder="Enter Email"
               type="text"
               id="name"
               required
@@ -49,17 +53,20 @@ function ContactForm() {
               onChange={(event) => setName(event.target.value)}
             />
           </div>
+          <div className={styles.control_text}>
+            <label htmlFor="message">Your Message</label>
+            <textarea
+              className={styles.input}
+              placeholder="Enter your message "
+              id="message"
+              rows="7"
+              required
+              value={message}
+              onChange={(event) => setMessage(event.target.value)}
+            ></textarea>
+          </div>
         </div>
-        <div className={styles.control}>
-          <label htmlFor="message">Your Message</label>
-          <textarea
-            id="message"
-            rows="5"
-            required
-            value={message}
-            onChange={(event) => setMessage(event.target.value)}
-          ></textarea>
-        </div>
+
         <div className={styles.actions}>
           <button>Send Message</button>
         </div>

@@ -1,0 +1,18 @@
+@mixin flex-it($dir: row, $ai: center, $jc: space-evenly, $g: 0em) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $ai;
+  justify-content: $jc;
+  gap: $g;
+}
+
+@mixin grid-it(
+  $colums: repeat(auto-fil, max-content),
+  $rows: repeat(auto-fil, max-content),
+  $gap: 0em
+) {
+  display: grid;
+  grid-template-columns: $colums;
+  grid-template-rows: $rows;
+  grid-gap: $gap;
+}

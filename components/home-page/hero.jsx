@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ContactForm from "../contact/contact-form";
 
 import styles from "./hero.module.scss";
 
@@ -9,12 +10,21 @@ export default function Hero() {
         <Image
           src="/images/site/sechaharom.JPG"
           alt="mohamed ali picture"
-          width={300}
-          height={300}
+          width={150}
+          height={150}
         />
       </div>
-      <h1>hi , im mohamed ali </h1>
-      <p>this is my portfolio im an next js developer </p>
+
+      <span className={styles.squer}>
+        <h1>Hi,im mohamed ali </h1>
+      </span>
+      <p>
+        This is my portfolio also you can find more about hand-pick link to
+        proven your designe according to my experience.{" "}
+      </p>
+      <div className={styles.form_container}>
+        <ContactForm />
+      </div>
     </section>
   );
 }
