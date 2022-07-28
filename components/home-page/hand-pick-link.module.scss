@@ -1,0 +1,43 @@
+@use "../../styles/pallet.module.scss";
+
+.links_table {
+  width: 100vw;
+  padding: var(--size-8);
+  @include pallet.grid-it(1fr, repeat(2, max-content), 6rem);
+  align-items: center;
+  justify-items: center;
+  background-color: var(--color-light-neutral-3);
+
+  .heading {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    @include pallet.flex-it(column, center, flex-start, 2.5rem);
+
+    > span {
+      @include pallet.flex-it(column, center, center, 0);
+      width: 7rem;
+      aspect-ratio: 1/1;
+      &::before {
+        content: "";
+        display: block;
+        width: 7rem;
+        aspect-ratio: 1/1;
+        mask: url(../../public/images/icons/iconmonstr-photo-camera-thin.svg);
+        background-color: var(--theme-color);
+        mask-position: center center;
+        mask-repeat: no-repeat;
+        mask-size: 7rem;
+      }
+    }
+    > h2 {
+      font-size: var(--size-8);
+      color: var(--color-light-neutral-6);
+      text-align: center;
+    }
+  }
+  .latest {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    width: 80vw;
+  }
+}

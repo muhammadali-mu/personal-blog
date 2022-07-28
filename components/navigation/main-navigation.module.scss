@@ -2,10 +2,7 @@
 
 .header {
   width: 100vw;
-  height: 9rem;
-  &::-webkit-scrollbar {
-    height: 7rem;
-  }
+  height: 7rem;
 
   @include pallet.grid-it(
     max-content minmax(20rem, 1fr) max-content,
@@ -36,7 +33,7 @@
     padding: 1rem;
     > ul {
       grid-column: 2/3;
-      @include pallet.flex-it(row, center, space-around, 2.5rem);
+      @include pallet.flex-it(row, center, space-around, 1.5rem);
       margin: 0;
       padding: 0;
       list-style: none;
@@ -48,8 +45,8 @@
         > a {
           @include pallet.flex-it(row, center, space-around, 0.5rem);
           font-family: inherit, sans-serif;
-          color: var(--color-light-neutral-7);
-          font-size: var(--size-7);
+          color: var(--color-light-neutral-3);
+          font-size: var(--size-6);
           width: max-content;
           padding: 0.5rem 0.7rem;
 
@@ -133,7 +130,7 @@
   .github {
     @include pallet.flex-it(row, center, space-around, 0.5rem);
     font-family: inherit, sans-serif;
-    color: var(--color-grey-50);
+    color: var(--color-grey-800);
     font-size: var(--size-7);
     width: max-content;
     grid-column: 3/-1;
@@ -141,13 +138,13 @@
     &::before {
       content: "";
       display: block;
-      width: 8rem;
+      width: 7rem;
       aspect-ratio: 1/1;
       mask: url(../../public/images/icons/logo-github.svg);
       background-color: var(--color-grey-800);
       mask-position: center center;
       mask-repeat: no-repeat;
-      mask-size: 8rem;
+      mask-size: 7rem;
     }
   }
 }

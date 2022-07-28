@@ -27,7 +27,7 @@
     grid-column: 1/-1;
     grid-row: 2/3;
     align-self: start;
-    max-width: 80rem;
+    max-width: 80vw;
     @include pallet.grid-it(
       repeat(auto-fit, minmax(20rem, 1fr)),
       repeat(auto-fit, max-content),

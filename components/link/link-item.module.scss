@@ -1,0 +1,47 @@
+@use "../../styles/pallet.module.scss";
+
+.item {
+  > a {
+    @include pallet.grid-it(
+      7rem minmax(10rem, 1fr),
+      7rem minmax(10rem, 1fr),
+      0.75rem
+    );
+    align-items: start;
+    justify-items: start;
+    padding: var(--size-3);
+  }
+  overflow: hidden;
+  border-radius: 16px;
+  padding: var(--size-6);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  background: rgb(255, 255, 255);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.69);
+  .container {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    justify-self: start;
+
+    width: 5rem;
+
+    overflow: hidden;
+
+    object-fit: cover;
+  }
+  .name {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    align-self: center;
+    color: var(--theme-color);
+    font-size: var(--size-8);
+  }
+  .content {
+    grid-row: 2/3;
+    grid-column: 1/3;
+    align-self: start;
+    color: var(--color-light-neutral-6);
+    font-size: var(--size-6);
+  }
+}

@@ -1,7 +1,5 @@
 import Link from "next/link";
-
 import Logo from "./logo";
-
 import styles from "./main-navigation.module.scss";
 
 function MainNavigation() {
@@ -16,13 +14,8 @@ function MainNavigation() {
       <nav className={styles.navbar}>
         <ul>
           <li>
-            <Link href="/posts">
-              <a className={styles.roadmap}>ROAD MAP</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <a className={styles.contact}>Contact</a>
+            <Link href="#image">
+              <a className={styles.img}>IMAGE</a>
             </Link>
           </li>
           <li>
@@ -37,11 +30,6 @@ function MainNavigation() {
           </li>
           <li>
             <Link href="/">
-              <a className={styles.img}>IMAGE</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
               <a className={styles.text}>FONT</a>
             </Link>
           </li>
@@ -50,11 +38,21 @@ function MainNavigation() {
               <a className={styles.youtube}>BEST YOUTUBER</a>
             </Link>
           </li>
+          <li>
+            <Link href="/posts">
+              <a className={styles.roadmap}>ROAD MAP</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact">
+              <a className={styles.contact}>Contact</a>
+            </Link>
+          </li>
         </ul>
       </nav>
 
       <Link href="/">
-        <a className={styles.github}></a>
+        <a className={styles.github}>My repository</a>
       </Link>
     </header>
   );

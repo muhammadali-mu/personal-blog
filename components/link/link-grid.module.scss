@@ -1,0 +1,13 @@
+@use "../../styles/pallet.module.scss";
+.grid {
+  @include pallet.grid-it(
+    repeat(auto-fill, minmax(25rem, 1fr)),
+    repeat(auto-fit, minmax(25rem, 1fr)),
+    3rem
+  );
+  align-items: start;
+  justify-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

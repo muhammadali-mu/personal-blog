@@ -4,7 +4,7 @@ import styles from "./featured-posts.module.scss";
 function FeaturedPosts(props) {
   return (
     <section className={styles.features}>
-      <h2>Featured Posts</h2> //in ghesmato dynamic konam
+      <h2>Featured Posts</h2>
       <div className={styles.latest}>
         <PostGrid posts={props.posts} />
       </div>
