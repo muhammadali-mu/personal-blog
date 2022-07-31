@@ -65,6 +65,10 @@ $font-code: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 html {
   box-sizing: border-box;
   font-size: 62.5%; // for ech rem we got 10 px
+
+  @media only screen and (max-width: 1440px) {
+    font-size: 50%;
+  }
 }
 
 body {

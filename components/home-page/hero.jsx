@@ -16,11 +16,24 @@ export default function Hero() {
       </div>
 
       <span className={styles.squer}>
-        <h1>Hi,im mohamed ali </h1>
+        <h1>
+          <span>Hi,</span>
+          <span> im &nbsp;</span>
+          <span> mohamed &nbsp;</span>
+          <span> ali</span>
+        </h1>
       </span>
       <p>
-        This is my portfolio also you can find more about hand-pick link to
-        proven your designe according to my experience.{" "}
+        <span>This is &nbsp;</span>
+        <span>my &nbsp;</span>
+        <span>portfolio &nbsp;</span>
+        <span>also you can &nbsp;</span>
+        <span>find more about &nbsp;</span>
+        <span>hand-pick link to &nbsp;</span>
+        <span>proven your &nbsp;</span>
+        <span>designe &nbsp;</span>
+        <span>according to &nbsp;</span>
+        <span>experience.</span>
       </p>
       <div className={styles.form_container}>
         <ContactForm />

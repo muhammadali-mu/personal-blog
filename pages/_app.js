@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }) {
           content="Here my chosen roadmap to learn web development and hand-picked resources to design and code your frontend ."
         />
         <title>Virtuoso</title>
+        <link rel="shortcut icon" href="virtuoso.ico" />
       </Head>
       <Component {...pageProps} />
     </Layout>
